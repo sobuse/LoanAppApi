@@ -13,19 +13,18 @@ namespace Entity.Configuration
     {
         public void Configure(EntityTypeBuilder<Borrower> builder)
         {
-            throw new NotImplementedException();
+            
             builder.HasData(new Borrower
             {
-                Id = new Guid("c9d4c053-49b6-410c-bc78-2d54a9991870"),
+                Id = new Guid("47632E5A-6D34-4AD2-869B-CF95C636C3ED"),
                 FullName = "OluwaDare John",
                 LoanAmount = 1000000,
                 Gender = Enumerators.Gender.Female,
                 DateOfBirth = DateTime.Now.Subtract(TimeSpan.FromDays(30 * 365)),
                 MonthlyIncome = 200000,
                 BVN = "7689432176",
-                LoanOfficerId = new Guid("c9d4c053-49b6-410c-bc78-r4567890y432"),
-
-
+                LoanOfficerId = new Guid("9A07B75E-E943-48BC-821C-76685161668D"),
+                IsDeleted = false
             });
         }
     }
