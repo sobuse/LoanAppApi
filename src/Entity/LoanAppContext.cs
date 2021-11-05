@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class RepositoryContext : DbContext
+    public class LoanAppContext : DbContext
     {
-        public RepositoryContext(DbContextOptions options)
+        public LoanAppContext(DbContextOptions options)
             : base(options)
         {
 
@@ -30,4 +30,3 @@ namespace Entity
         
     }
 }
-//LoanConfiguration

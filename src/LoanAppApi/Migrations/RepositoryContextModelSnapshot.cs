@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LoanAppApi.Migrations
 {
-    [DbContext(typeof(RepositoryContext))]
+    [DbContext(typeof(LoanAppContext))]
     partial class RepositoryContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

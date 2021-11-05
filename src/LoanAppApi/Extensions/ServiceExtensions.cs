@@ -33,7 +33,7 @@ namespace LoanAppApi.Extensions
         });
 
         public static void ConfigureSqlContext(this IServiceCollection services, IConfiguration configuration) =>
-         services.AddDbContext<RepositoryContext>(opts =>
+         services.AddDbContext<LoanAppContext>(opts =>
            opts.UseSqlServer(configuration.GetConnectionString("sqlConnection"), b =>
             b.MigrationsAssembly("LoanAppApi")));
 
