@@ -15,7 +15,7 @@ namespace LoanAppApi.Extensions
     public static class  ServiceExtensions
     {
         public static void ConfigureLoggerService(this IServiceCollection services) =>
-        services.AddScoped<ILoggerManager, LoggerManager>(); jagajaga
+        services.AddScoped<ILoggerManager, LoggerManager>();
 
         public static void ConfigureCors(this IServiceCollection services) =>
         services.AddCors(options =>
