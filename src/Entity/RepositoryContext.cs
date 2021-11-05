@@ -17,6 +17,7 @@ namespace Entity
         }
         public DbSet<Borrower> Borrowers { get; set; }
         public DbSet<LoanOfficer> LoanOfficers { get; set; }
+        public DbSet<Loan> Loans { get; set; }
         
     }
 }
