@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Entity\Entity.csproj" />
     <ProjectReference Include="..\LoggerServices\LoggerServices.csproj" />
   </ItemGroup>
 
