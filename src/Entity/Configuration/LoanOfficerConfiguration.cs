@@ -13,10 +13,12 @@ namespace Entity.Configuration
     {
         public void Configure(EntityTypeBuilder<LoanOfficer> builder)
         {
+
+            
             builder.HasData(
                 new LoanOfficer
                 {
-                    Id = new Guid("9A07B75E-E943-48BC-821C-76685161668D"),
+                    Id = Guid.NewGuid(),
                     Fullname = "Obuse Samuel",
                     RequestLoan = Enumerators.RequestLoan.Pending
                 }
