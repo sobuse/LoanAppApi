@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class LoanAppContext : DbContext
+    public class LoanApplicationDbContext : DbContext
     {
-        public LoanAppContext(DbContextOptions options)
+        public LoanApplicationDbContext(DbContextOptions options)
             : base(options)
         {
 
