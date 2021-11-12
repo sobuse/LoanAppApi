@@ -10,12 +10,67 @@ namespace Repository
 {
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
-        public IQueryable<T> FindAll(bool trackChanges)
+        public T Add(T obj)
         {
             throw new NotImplementedException();
         }
 
-        public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression, bool trackChanges)
+        public Task<T> AddAsync(T obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<T> AddRange(IEnumerable<T> obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Any(Expression<Func<T, bool>> predicate = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> AnyAsync(Expression<Func<T, bool>> predicate = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<T> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<T>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<T> GetByCondition(Expression<Func<T, bool>> predicate = null, Func<IQueryable, IOrderedQueryable> orderby = null, int? skip = null, int? take = null, params string[] includeProperties)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T GetById(object id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> GetByIdAsync(object id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T GetSingleByCondition(Expression<Func<T, bool>> predicate = null, Func<IQueryable, IOrderedQueryable> orderby = null, params string[] includeProperties)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public (T, string) SoftDelete(Guid Id)
         {
             throw new NotImplementedException();
         }
