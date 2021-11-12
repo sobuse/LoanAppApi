@@ -12,9 +12,7 @@ namespace Entity.Configuration
     public class LoanOfficerConfiguration : IEntityTypeConfiguration<LoanOfficer>
     {
         public void Configure(EntityTypeBuilder<LoanOfficer> builder)
-        {
-
-            
+        {  
             builder.HasData(
                 new LoanOfficer
                 {
