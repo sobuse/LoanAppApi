@@ -11,7 +11,6 @@ namespace Entity.Models
 {
     public class LoanOfficer
     {
-        [Column("LoanOfficerId")]
         public Guid Id { get; set; }
 
         [Required(ErrorMessage = "Your Full Name is a required field.")]
