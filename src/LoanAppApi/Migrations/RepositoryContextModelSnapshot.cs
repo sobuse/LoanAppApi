@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LoanAppApi.Migrations
 {
-    [DbContext(typeof(RepositoryContext))]
+    [DbContext(typeof(LoanAppContext))]
     partial class RepositoryContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -62,11 +62,60 @@ namespace LoanAppApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Borrowers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("47632e5a-6d34-4ad2-869b-cf95c636c3ed"),
+                            BVN = "7689432176",
+                            BorrowedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1991, 11, 13, 20, 51, 7, 47, DateTimeKind.Local).AddTicks(7882),
+                            DueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FullName = "OluwaDare John",
+                            Gender = 2,
+                            IsDeleted = false,
+                            LoanAmount = 1000000,
+                            LoanOfficerId = new Guid("9a07b75e-e943-48bc-821c-76685161668d"),
+                            MonthlyIncome = 200000
+                        });
+                });
+
+            modelBuilder.Entity("Entity.Models.Loan", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("RequesterId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Loans");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("a466a903-2b53-40c1-8dbf-8d6e323baa43"),
+                            Amount = 10000000,
+                            Comment = "Please I need a loan for my house rent",
+                            CreatedAt = new DateTime(2021, 11, 5, 20, 51, 7, 50, DateTimeKind.Local).AddTicks(5870),
+                            RequesterId = new Guid("47632e5a-6d34-4ad2-869b-cf95c636c3ed")
+                        });
                 });
 
             modelBuilder.Entity("Entity.Models.LoanOfficer", b =>
                 {
-                    b.Property<Guid>("LoanOfficerId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("LoanOfficerId");
@@ -76,12 +125,20 @@ namespace LoanAppApi.Migrations
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
-                    b.Property<int>("requestLoan")
+                    b.Property<int>("RequestLoan")
                         .HasColumnType("int");
 
-                    b.HasKey("LoanOfficerId");
+                    b.HasKey("Id");
 
                     b.ToTable("LoanOfficers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("9a07b75e-e943-48bc-821c-76685161668d"),
+                            Fullname = "Obuse Samuel",
+                            RequestLoan = 1
+                        });
                 });
 #pragma warning restore 612, 618
         }
