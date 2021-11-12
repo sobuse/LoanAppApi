@@ -14,8 +14,6 @@ namespace Entity.Configuration
        
         public void Configure(EntityTypeBuilder<Loan> builder)
         {
-           // var guid = Guid.NewGuid();
-
             builder.HasData(new Loan
             {
                 Id = Guid.NewGuid(),
